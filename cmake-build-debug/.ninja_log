@@ -1,0 +1,16 @@
+# ninja log v6
+26	197	7653272486240766	CMakeFiles/TaskMenager.dir/manager.cpp.obj	dfa3e59e84a4d7f8
+29	203	7653272486270694	CMakeFiles/TaskMenager.dir/anomaly_detector.cpp.obj	4b729d5740f864d6
+23	1158	7653272486205744	CMakeFiles/TaskMenager.dir/process.cpp.obj	a110a013edd26e3a
+19	1532	7653272486165845	CMakeFiles/TaskMenager.dir/main.cpp.obj	6bb1affa9907238f
+1532	1888	7653272501298223	TaskMenager.exe	c1c16ac53441f1d4
+5	1456	7653272804795817	CMakeFiles/TaskMenager.dir/main.cpp.obj	6bb1affa9907238f
+1457	1608	7653272819312145	TaskMenager.exe	c1c16ac53441f1d4
+6	1056	7653275916901137	CMakeFiles/TaskMenager.dir/process.cpp.obj	a110a013edd26e3a
+1056	1210	7653275927405797	TaskMenager.exe	c1c16ac53441f1d4
+12	1143	7653282490714218	CMakeFiles/TaskMenager.dir/process.cpp.obj	a110a013edd26e3a
+7	1541	7653282490667672	CMakeFiles/TaskMenager.dir/main.cpp.obj	6bb1affa9907238f
+1541	1697	7653282506010167	TaskMenager.exe	c1c16ac53441f1d4
+10	1120	7653287566529762	CMakeFiles/TaskMenager.dir/process.cpp.obj	a110a013edd26e3a
+6	1534	7653287566482482	CMakeFiles/TaskMenager.dir/main.cpp.obj	6bb1affa9907238f
+1534	1704	7653287581773154	TaskMenager.exe	c1c16ac53441f1d4
