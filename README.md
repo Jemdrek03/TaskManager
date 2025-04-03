@@ -43,6 +43,6 @@ Projekt powstał w celu ćwiczenia:
 
 ## 👨‍💻 Autor
 
-Projekt tworzony w celach edukacyjnych 🎓
+Projekt tworzony w celach rozwoju własnego 🎓
 
 Jemdrek03
