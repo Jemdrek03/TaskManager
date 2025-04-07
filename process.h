@@ -9,7 +9,6 @@
 #include <thread>
 #include <mutex>
 
-
 class Process {
 
 public:

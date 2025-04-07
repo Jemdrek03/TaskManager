@@ -4,6 +4,7 @@
 
 std::mutex outputCrt;
 
+
 // Constructor
 Process::Process(int id, std::string name, int type)
         : id(id), name(std::move(name)), type(type), running(false), cpuUsage(0.0), ramUsage(0.0) {
@@ -62,8 +63,20 @@ void Process::run(){
                 std::cout << "[Process " << Process::getId() << "] CPU: " << Process::getCpuUsage() << "% | RAM: " << Process::getRamUsage() << "MB\n";
                 outputCrt.unlock();
                 break;
-                // Program with anomaly
+                // Programs with anomalies
+                // Obviously these kind of programs doesnt necessarily mean that something bad is happening with the program
+                // Its only made for some simple tests, and to see how AI is working in c++
+                // First one will be a sudden spike in CPU usage, that is not coming down after 50% of the whole time needed to stop a process
             case 2:
+                break;
+                 // Here its a program that !!may!! have a memory leak
+            case 3:
+                break;
+                // This one is a case of c2 communication
+            case 4:
+                break;
+                // Last but not least, a case of process hollowing
+            case 5:
                 break;
         }
     }
