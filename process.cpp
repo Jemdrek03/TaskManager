@@ -42,8 +42,12 @@ void Process::run(){
     std::uniform_real_distribution<double> cpuDist(10.0, 100.0);
     std::uniform_real_distribution<double> ramDist(10.0, 120.0);
 
+    std::uniform_real_distribution<double> cpuDistSpike(90.0, 100.0);
+
     std::vector<int> ramDummy;
 
+    // Some variables needed to check which iteration it is
+    int check1 = 0, check2 = 0, check3 = 0;
     while (running) {
         switch(type){
             // "Regular program"
@@ -64,19 +68,58 @@ void Process::run(){
                 outputCrt.unlock();
                 break;
                 // Programs with anomalies
-                // Obviously these kind of programs doesnt necessarily mean that something bad is happening with the program
+                // Obviously these kind of cases don't necessarily mean that something bad is happening with the program
                 // Its only made for some simple tests, and to see how AI is working in c++
                 // First one will be a sudden spike in CPU usage, that is not coming down after 50% of the whole time needed to stop a process
             case 2:
+                if(check1++ < 4) // !!CHANGE IT LATER FOR CONFIG FILE!!
+                {
+                    cpuUsage = cpuDist(generator);
+                }
+                else
+                {
+                    cpuUsage = cpuDistSpike(generator);
+                }
+                ramUsage = ramDist(generator);
+
+                ramDummy.resize(static_cast<size_t>(ramUsage * 1000));
+
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+                outputCrt.lock();
+                std::cout << "[Process " << Process::getId() << "] CPU: " << Process::getCpuUsage() << "% | RAM: " << Process::getRamUsage() << "MB\n";
+                outputCrt.unlock();
                 break;
-                 // Here its a program that !!may!! have a memory leak
+
+                 // Here is a program that !!may!! have a memory leak
             case 3:
+                cpuUsage = cpuDist(generator);
+                if(check2++ < 2)
+                {
+                    ramUsage = ramDist(generator);
+                    ramDummy.resize(static_cast<size_t>(ramUsage * 1000));
+                }
+                else
+                {
+                    ramDummy.resize(static_cast<size_t>(ramUsage += 3) * 1000));
+                }
+
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+                outputCrt.lock();
+                std::cout << "[Process " << Process::getId() << "] CPU: " << Process::getCpuUsage() << "% | RAM: " << Process::getRamUsage() << "MB\n";
+                outputCrt.unlock();
                 break;
+                break;
+
                 // This one is a case of c2 communication
             case 4:
+                // Gonna add this later as it requires some more changes
                 break;
+
                 // Last but not least, a case of process hollowing
             case 5:
+                // Same thing as above
                 break;
         }
     }
