@@ -101,7 +101,7 @@ void Process::run(){
                 }
                 else
                 {
-                    ramDummy.resize(static_cast<size_t>(ramUsage += 3) * 1000));
+                    ramDummy.resize(static_cast<size_t>(ramUsage += 3) * 1000);
                 }
 
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -109,7 +109,6 @@ void Process::run(){
                 outputCrt.lock();
                 std::cout << "[Process " << Process::getId() << "] CPU: " << Process::getCpuUsage() << "% | RAM: " << Process::getRamUsage() << "MB\n";
                 outputCrt.unlock();
-                break;
                 break;
 
                 // This one is a case of c2 communication
