@@ -1,11 +1,11 @@
-# 🧠 SmartTaskManager
+# SmartTaskManager
 ***Projekt jest w trakcie planowania także jego założenia i funkcje mogą (90%) ulec zmianie. Read.me w wersji wstępnej***
 
 **Inteligentny menedżer zadań w C++ z wykrywaniem anomalii**
 
 ---
 
-## 📌 Opis projektu
+## Opis projektu
 
 SmartTaskManager to konsolowa aplikacja napisana w języku C++20, która symuluje działanie menedżera zadań systemu operacyjnego. Każdy proces działa jako osobny wątek, generując sztuczne obciążenie CPU i RAM. System analizuje dane w czasie rzeczywistym i wykrywa anomalie w działaniu procesów.
 
@@ -17,7 +17,7 @@ Projekt powstał w celu ćwiczenia:
 
 ---
 
-## 🧱 Technologie, które chciałbym aby były użyte
+## Technologie, które chciałbym aby były użyte
 
 - **C++20**
 - Wątki: `std::thread`, `std::jthread`, `mutex`, `condition_variable`
@@ -29,15 +29,15 @@ Projekt powstał w celu ćwiczenia:
 
 ---
 
-## 🔍 Funkcje
+## Funkcje
 
-- ✅ Symulacja wielu procesów jako niezależne wątki
-- ✅ Dynamiczne zużycie CPU i RAM
-- ✅ Rejestrowanie metryk per proces (rolling window)
-- ✅ Wykrywanie anomalii (np. nagłe skoki CPU, zbyt duże zużycie RAM)
-- ✅ Reakcja na anomalie (np. oznaczenie, zatrzymanie procesu)
-- ⏳ (W planach) Uczenie maszynowe do detekcji anomalii
-- ⏳ (W planach) Prosty interfejs terminalowy
+-  Symulacja wielu procesów jako niezależne wątki
+-  Dynamiczne zużycie CPU i RAM
+-  Rejestrowanie metryk per proces (rolling window)
+-  Wykrywanie anomalii (np. nagłe skoki CPU, zbyt duże zużycie RAM)
+-  Reakcja na anomalie (np. oznaczenie, zatrzymanie procesu)
+-  Uczenie maszynowe do detekcji anomalii
+-  Prosty interfejs terminalowy
 
 ---
 
